@@ -19,7 +19,7 @@ def hash_password(password: str):
     return bcrypt.hashpw(password.encode("utf-8"), bcrypt.gensalt()).decode("utf-8")
     
 def check_password(plain: str, hashed: str) -> bool:
-    return bcrypt.hashpw(plain.encode("utf-8"), hashed.encode("utf-8"))
+    return bcrypt.checkpw(plain.encode("utf-8"), hashed.encode("utf-8"))
       
 def generate_access_token(data: dict):
     to_encode = data.copy()
