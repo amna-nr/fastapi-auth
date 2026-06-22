@@ -1,7 +1,6 @@
 from app.core.database import Base
 
-from sqlalchemy import Column, Integer, String, Boolean, TIMESTAMP
-from datetime import datetime, timezone
+from sqlalchemy import Column, String, Boolean, TIMESTAMP, func
 from sqlalchemy.dialects.postgresql import UUID
 from uuid import uuid4
 
@@ -14,4 +13,4 @@ class User(Base):
     password_hash = Column(String, nullable=False) 
     role = Column(String, default="member" )
     is_verified = Column(Boolean, default=False)
-    created_at = Column(TIMESTAMP(timezone=True), default=datetime.now(timezone.utc))
+    created_at = Column(TIMESTAMP(timezone=True), server_default=func.now())
