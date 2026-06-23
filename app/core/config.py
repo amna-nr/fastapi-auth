@@ -5,8 +5,8 @@ class Settings(BaseSettings):
     DATABASE_URL: str
     ALGORITHM: str
     SECRET_KEY: str
-    REFRESH_TOKEN_EXPIRES_MINUTES: int = 15
-    ACCESS_TOKEN_EXPIRES_DAYS: int = 7
+    ACCESS_TOKEN_EXPIRES_MINUTES: int = 15
+    REFRESH_TOKEN_EXPIRES_DAYS: int = 7
     REDIS_URL: str
 
     class Config():
