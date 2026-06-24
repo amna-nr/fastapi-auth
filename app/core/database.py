@@ -17,7 +17,7 @@ AsyncSessionLocal = async_sessionmaker(
 )
 
 async def get_db():
-    with AsyncSessionLocal as db:
+    async with AsyncSessionLocal() as db:
         try:
             yield db
         except Exception:
